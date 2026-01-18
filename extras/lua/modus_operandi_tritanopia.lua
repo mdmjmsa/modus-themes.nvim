@@ -2102,8 +2102,8 @@ local highlights = {
     fg = "#000000"
   },
   NormalFloat = {
-    bg = "#e0e0e0",
-    fg = "#0a0a0a"
+    bg = "#f2f2f2",
+    fg = "#000000"
   },
   NormalNC = {
     bg = "#ffffff",
