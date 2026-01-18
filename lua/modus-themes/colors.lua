@@ -98,6 +98,8 @@ M.modus_operandi = {
 	fg_active = "#0a0a0a",
 	bg_inactive = "#e9e9e9",
 	fg_inactive = "#404148",
+	bg_region = "#bdbdbd",
+	fg_region = "#000000",
 	-- Status line specific colors
 	bg_status_line_active = "#c8c8c8",
 	fg_status_line_active = "#0a0a0a",
@@ -458,7 +460,7 @@ function M.setup(opts)
 	colors.hint = colors.cyan_faint
 	colors.ok = colors.green_cooler
 	colors.success = colors.fg_added
-	colors.visual = colors.bg_magenta_intense
+	colors.visual = colors.bg_region
 	colors.accent_light = colors.blue_faint
 	colors.accent = colors.blue_warmer
 	colors.accent_darker = colors.blue
