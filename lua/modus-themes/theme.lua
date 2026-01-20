@@ -872,6 +872,9 @@ function M.setup()
 		RenderMarkdownH6Bg = { fg = c.cyan_warmer, bg = c.bg_cyan_nuanced },
 
 		-- snacks.nvim
+		SnacksIndent = { fg = c.bg_indent_guide_inactive, nocombine = true },
+		SnacksIndentHunk = { fg = c.bg_indent_guide_hunk, nocombine = true },
+		SnacksIndentScope = { fg = c.bg_indent_guide_active, nocombine = true },
 		SnacksPicker = { link = "Normal" },
 		SnacksPickerListCursorLine = { link = "CursorLine" },
 		SnacksPickerMatch = { link = "CurSearch" },

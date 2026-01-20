@@ -2411,6 +2411,18 @@ local highlights = {
     bg = "#f2f2f2",
     fg = "#595959"
   },
+  SnacksIndent = {
+    fg = "#d3d3d3",
+    nocombine = true
+  },
+  SnacksIndentHunk = {
+    fg = "#b3b3b3",
+    nocombine = true
+  },
+  SnacksIndentScope = {
+    fg = "#939393",
+    nocombine = true
+  },
   SnacksPicker = {
     link = "Normal"
   },
