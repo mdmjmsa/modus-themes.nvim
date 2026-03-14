@@ -197,7 +197,7 @@ function M.setup()
 
 		-- Neovim tree-sitter highlights
 		-- Identifiers
-		["@variable"] = { link = "Identifier" }, -- Any variable name that does not have another highlight.
+		["@variable"] = {}, -- Any variable name that does not have another highlight.
 		["@variable.builtin"] = { link = "Conditional" }, -- Variable names that are defined by the languages, like `this` or `self`.
 		["@variable.parameter"] = { fg = c.cyan }, -- Parameters of a function.
 		["@variable.parameter.builtin"] = { fg = c.cyan_faint }, -- Built-in parameters of a function (e.g. `...` or `_`).
