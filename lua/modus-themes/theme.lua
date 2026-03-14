@@ -253,7 +253,7 @@ function M.setup()
 		["@keyword"] = { link = "Keyword" }, -- Keywords that don't fall in specific categories.
 		["@keyword.coroutine"] = { link = "@keyword" }, -- Keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
 		["@keyword.function"] = { link = "Function" }, -- Keywords that define a function (e.g. `func` in Go, `def` in Python).
-		["@keyword.operator"] = { link = "@operator" }, -- Operators that are words (e.g. `and`, `or`).
+		["@keyword.operator"] = { link = "@keyword" }, -- Operators that are words (e.g. `and`, `or`).
 		["@keyword.import"] = { link = "Include" }, -- Keywords for including imports (e.g. `import`, `from` in Python).
 		["@keyword.type"] = { link = "@keyword" }, -- Keywords defining composite types (e.g. `struct`, `enum` in C).
 		["@keyword.modifier"] = { link = "@keyword" }, -- Keywords defining type modifiers (e.g. `const`, `static`, `public`).
