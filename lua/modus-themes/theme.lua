@@ -58,7 +58,7 @@ function M.setup()
 		CursorIM = { link = "Cursor" }, -- Like Cursor, but used when in IME mode |CursorIM|.
 		ColorColumn = { fg = c.fg_main, bg = c.bg_dim }, -- Used for the columns set with `colorcolumn`.
 		FoldColumn = { fg = c.fg_inactive, bg = options.transparent and c.none or c.bg_inactive }, -- See `foldcolumn`.
-		Search = { fg = c.fg_main, bg = c.bg_green_intense }, -- Last search pattern highlighting (see `hlsearch`).  Also used for similar items that need to stand out.
+		Search = { fg = c.fg_main, bg = c.bg_cyan_intense }, -- Last search pattern highlighting (see `hlsearch`).  Also used for similar items that need to stand out.
 		IncSearch = { fg = c.fg_main, bg = c.bg_yellow_intense }, -- `incsearch` highlighting; also used for the text replaced with `:s///c`.
 		CurSearch = { link = "IncSearch" },
 		Substitute = { fg = c.fg_main, bg = c.bg_red_intense }, -- |:substitute| replacement text highlighting.
