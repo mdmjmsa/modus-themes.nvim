@@ -120,7 +120,7 @@ function M.setup()
 		PreProc = { fg = c.red_cooler }, -- (preferred) generic preprocessor.
 		Include = { fg = c.red_cooler }, -- preprocessor `#include`.
 		Define = { fg = c.red_cooler }, -- preprocessor `#define`.
-		Macro = { fg = c.red_cooler }, -- Same as Define.
+		Macro = { fg = c.magenta_faint }, -- identifier defined by preprocessor `#define`
 		PreCondit = { fg = c.red_cooler }, -- preprocessor `#if`, `#else`, `#endif`, etc.
 		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention (e.g. `TODO`, `FIXME`, and `XXX`).
 		Type = { fg = c.cyan_cooler }, -- (preferred) `int`, `long`, `char`, etc.
@@ -205,7 +205,7 @@ function M.setup()
 
 		["@constant"] = { link = "Constant" }, -- Constant identifier.
 		["@constant.builtin"] = { link = "Special" }, -- Built-in constant values.
-		["@constant.macro"] = { link = "Define" }, -- Constants defined by the preprocessor.
+		["@constant.macro"] = { link = "Macro" }, -- Constants defined by the preprocessor.
 
 		["@module"] = { link = "Include" }, -- Modules or namespaces.
 		["@module.builtin"] = { link = "Conditional" }, -- Built-in modules or namespaces.
