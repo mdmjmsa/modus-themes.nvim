@@ -235,7 +235,8 @@ function M.setup()
 
 		["@attribute"] = { link = "PreProc" }, -- Attribute annotations (e.g. Python decorators).
 		["@attribute.builtin"] = { link = "PreProc" }, -- Built-in annotations (e.g. `property` in Python).
-		["@property"] = { link = "@field" }, -- The key in key-value pairs.
+		["@property"] = { link = "Label" }, -- The key in key-value pairs
+		["@property.cs"] = { link = "@variable.member" }, -- getter/setter in C#
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- Function definitions.
