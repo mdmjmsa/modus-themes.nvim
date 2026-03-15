@@ -132,6 +132,7 @@ M.modus_operandi = {
 	-- indent guides
 	fg_indent_guide_active = "#939393",
 	fg_indent_guide_inactive = "#d3d3d3",
+	fg_indent_guide_hunk = "#b3b3b3",
 
 	-- Tinted variant
 	tinted_bg_main = "#fbf7f0",
@@ -350,6 +351,7 @@ M.modus_vivendi = {
 	-- indent guides
 	fg_indent_guide_active = "#707070",
 	fg_indent_guide_inactive = "#404040",
+	fg_indent_guide_hunk = "#585858",
 
 	-- Tinted Variant
 	tinted_bg_main = "#0d0e1c",
