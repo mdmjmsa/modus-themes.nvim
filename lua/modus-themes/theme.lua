@@ -62,7 +62,7 @@ function M.setup()
 		IncSearch = { fg = c.fg_main, bg = c.bg_yellow_intense }, -- `incsearch` highlighting; also used for the text replaced with `:s///c`.
 		CurSearch = { link = "IncSearch" },
 		Substitute = { fg = c.fg_main, bg = c.bg_red_intense }, -- |:substitute| replacement text highlighting.
-		QuickFixLine = { fg = c.fg_main, bg = c.visual }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
+		QuickFixLine = { fg = c.fg_visual, bg = c.bg_visual }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
 		Pmenu = { fg = c.fg_active, bg = c.bg_active }, -- Popup menu: normal item.
 		PmenuSel = { fg = c.bg_active, bg = c.fg_active }, -- Popup menu: selected item.
 		PmenuSbar = { fg = c.fg_active, bg = c.bg_dim }, -- Popup menu: scrollbar.
@@ -71,9 +71,9 @@ function M.setup()
 		Scrollbar = { link = "PmenuSbar" }, -- Scrollbar.
 		Directory = { fg = c.blue }, -- Directory names (and other special names in listings).
 		Title = { fg = c.fg_alt, bold = true }, -- titles for output from `:set all`, `:autocmd` etc.
-		Visual = { fg = c.fg_main, bg = c.visual }, -- Visual mode selection.
+		Visual = { fg = c.fg_visual, bg = c.bg_visual }, -- Visual mode selection.
 		VisualNOS = { link = "Visual" }, -- Visual mode selection when vim is "Not Owning the Selection".
-		WildMenu = { fg = c.fg_main, bg = c.visual }, -- current match in `wildmenu` completion.
+		WildMenu = { fg = c.fg_visual, bg = c.bg_visual }, -- current match in `wildmenu` completion.
 		Whitespace = { link = "NonText" }, -- `nbsp`, `space`, `tab` and `trail` in `listchars`.
 		StatusLine = { fg = c.fg_status_line_active, bg = c.bg_status_line_active }, -- Status line of current window.
 		StatusLineNC = { fg = c.fg_status_line_inactive, bg = c.bg_status_line_inactive }, -- Status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use `^^^` in the status line of the current window.
@@ -642,7 +642,7 @@ function M.setup()
 
 		-- Sneak
 		Sneak = { fg = c.bg_hl_line, bg = c.magenta },
-		SneakScope = { bg = c.visual },
+		SneakScope = { bg = c.bg_visual },
 
 		-- Hop
 		HopNextKey = { fg = c.magenta_cooler, bold = true },
