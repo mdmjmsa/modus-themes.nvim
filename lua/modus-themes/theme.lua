@@ -850,10 +850,10 @@ function M.setup()
 		NoiceCompletionItemKindValue = { link = "@string" },
 
 		-- indent-blankline.nvim
-		IndentBlanklineChar = { fg = c.fg_dim, nocombine = true },
-		IndentBlanklineContextChar = { fg = c.magenta_cooler, nocombine = true },
-		IblIndent = { fg = c.fg_dim, nocombine = true },
-		IblScope = { fg = c.magenta_cooler, nocombine = true },
+		IndentBlanklineChar = { fg = c.fg_indent_guide_inactive, nocombine = true },
+		IndentBlanklineContextChar = { fg = c.fg_indent_guide_active, nocombine = true },
+		IblIndent = { fg = c.fg_indent_guide_inactive, nocombine = true },
+		IblScope = { fg = c.fg_indent_guide_active, nocombine = true },
 
 		-- render-markdown.nvim
 		RenderMarkdownCodeInline = { link = "markdownCode" },

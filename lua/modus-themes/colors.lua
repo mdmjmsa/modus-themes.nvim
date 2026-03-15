@@ -129,6 +129,9 @@ M.modus_operandi = {
 	fg_removed = "#8f1313",
 	fg_removed_intense = "#aa2222",
 	bg_diff_context = "#f3f3f3",
+	-- indent guides
+	fg_indent_guide_active = "#939393",
+	fg_indent_guide_inactive = "#d3d3d3",
 
 	-- Tinted variant
 	tinted_bg_main = "#fbf7f0",
@@ -344,6 +347,9 @@ M.modus_vivendi = {
 	fg_removed = "#ffbfbf",
 	fg_removed_intense = "#ff9095",
 	bg_diff_context = "#1a1a1a",
+	-- indent guides
+	fg_indent_guide_active = "#707070",
+	fg_indent_guide_inactive = "#404040",
 
 	-- Tinted Variant
 	tinted_bg_main = "#0d0e1c",
