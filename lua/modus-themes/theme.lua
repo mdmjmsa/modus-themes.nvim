@@ -204,7 +204,7 @@ function M.setup()
 		["@variable.member"] = { link = "@variable" }, -- Object and struct fields.
 
 		["@constant"] = { link = "Constant" }, -- Constant identifier.
-		["@constant.builtin"] = { link = "Special" }, -- Built-in constant values.
+		["@constant.builtin"] = { fg = c.blue_cooler }, -- Built-in constant values.
 		["@constant.macro"] = { link = "Macro" }, -- Constants defined by the preprocessor.
 
 		["@module"] = { link = "Include" }, -- Modules or namespaces.
