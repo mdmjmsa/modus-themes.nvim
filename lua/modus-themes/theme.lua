@@ -236,6 +236,8 @@ function M.setup()
 		["@attribute"] = { link = "PreProc" }, -- Attribute annotations (e.g. Python decorators).
 		["@attribute.builtin"] = { link = "PreProc" }, -- Built-in annotations (e.g. `property` in Python).
 		["@property"] = { link = "Label" }, -- The key in key-value pairs
+		["@property.c"] = { link = "@variable.member" }, -- Struct fields in C
+		["@property.cpp"] = { link = "@variable.member" }, -- Class/struct members in C++
 		["@property.cs"] = { link = "@variable.member" }, -- getter/setter in C#
 
 		-- Functions
@@ -372,6 +374,16 @@ function M.setup()
 		["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
 		["@lsp.typemod.variable.injected"] = { link = "@variable" },
 		["@lsp.typemod.variable.static"] = { link = "@constant" },
+
+		-- C/C++ LSP Semantic Token Groups
+		["@lsp.type.property.c"] = { link = "@property.c" }, -- Struct field access in C
+		["@lsp.type.property.cpp"] = { link = "@property.cpp" }, -- Class/Struct member access in C++
+		["@lsp.typemod.property.declaration.c"] = { link = "Identifier" }, -- Struct field declaration in C
+		["@lsp.typemod.property.declaration.cpp"] = { link = "Identifier" }, -- Class/Struct member declaration in C++
+		["@lsp.typemod.variable.declaration.c"] = { link = "Identifier" }, -- Variable declaration in C
+		["@lsp.typemod.variable.declaration.cpp"] = { link = "Identifier" }, -- Variable declaration in C++
+		["@lsp.typemod.variable.definition.c"] = { link = "Identifier" }, -- Variable definition in C
+		["@lsp.typemod.variable.definition.cpp"] = { link = "Identifier" }, -- Variable definition in C++
 
 		-- Plugins
 		-- Plugins originally taken and modified from
