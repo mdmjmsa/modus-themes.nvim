@@ -239,7 +239,7 @@ function M.setup()
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- Function definitions.
-		["@function.builtin"] = { link = "Special" }, -- Built-in functions.
+		["@function.builtin"] = { fg = c.magenta_warmer }, -- Built-in functions.
 		["@function.call"] = { link = "@function" }, -- Function calls.
 		["@function.macro"] = { link = "Macro" }, -- Preprocessor calls.
 
