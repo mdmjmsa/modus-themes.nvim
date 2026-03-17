@@ -124,8 +124,8 @@ function M.setup()
 		PreCondit = { fg = c.red_cooler }, -- preprocessor `#if`, `#else`, `#endif`, etc.
 		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention (e.g. `TODO`, `FIXME`, and `XXX`).
 		Type = { fg = c.cyan_cooler }, -- (preferred) `int`, `long`, `char`, etc.
-		TypeDef = { fg = c.cyan_warmer }, -- A typedef.
 		Number = { fg = c.blue_faint }, -- Number constant (e.g. `234`, `0xff`).
+		Typedef = { fg = c.keyword }, -- A typedef.
 		Float = { link = "Number" }, -- Floating point constant (e.g. `2.3e10`).
 		Operator = { fg = c.fg_main }, -- `sizeof`, `+`, `*`, etc.
 		Tag = { fg = c.magenta }, -- You can use CTRL-] on this.
