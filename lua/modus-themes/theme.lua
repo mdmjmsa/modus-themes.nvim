@@ -107,8 +107,8 @@ function M.setup()
 		Character = { fg = c.blue_warmer }, -- Character constant (e.g. `c`, `\n`).
 		Boolean = { fg = c.blue, bold = true }, -- Boolean constant (e.g. `TRUE`, `false`).
 		Statement = { fg = c.keyword }, -- (preferred) any statement.
-		Conditional = { fg = c.keyword }, -- `if`, `then`, `else`, `endif`, `switch`, etc.
-		Repeat = { fg = c.keyword }, -- `for`, `do`, `while`, etc.
+		Conditional = { link = "Statement" }, -- `if`, `then`, `else`, `endif`, `switch`, etc.
+		Repeat = { link = "Statement" }, -- `for`, `do`, `while`, etc.
 		Label = { fg = c.cyan }, -- `case`, `default`, etc.
 		Keyword = { fg = c.keyword, style = options.styles.keywords }, -- Any other keyword.
 		Exception = { fg = c.keyword }, -- `try`, `catch`, `throw`, etc.
@@ -118,10 +118,10 @@ function M.setup()
 		Function = { fg = c.fnname, style = options.styles.functions }, -- Function names.
 		Identifier = { fg = c.identifier, style = options.styles.variables }, -- General identifiers.
 		PreProc = { fg = c.preproc }, -- (preferred) generic preprocessor.
-		Include = { fg = c.preproc }, -- preprocessor `#include`.
-		Define = { fg = c.preproc }, -- preprocessor `#define`.
+		Include = { link = "PreProc" }, -- preprocessor `#include`.
+		Define = { link = "PreProc" }, -- preprocessor `#define`.
 		Macro = { link = "Define" }, -- Same as Define
-		PreCondit = { fg = c.preproc }, -- preprocessor `#if`, `#else`, `#endif`, etc.
+		PreCondit = { link = "PreProc" }, -- preprocessor `#if`, `#else`, `#endif`, etc.
 		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention (e.g. `TODO`, `FIXME`, and `XXX`).
 		Type = { fg = c.type }, -- (preferred) `int`, `long`, `char`, etc.
 		Typedef = { fg = c.keyword }, -- A typedef.
