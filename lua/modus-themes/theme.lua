@@ -130,8 +130,8 @@ function M.setup()
 		Operator = { fg = c.fg_main }, -- `sizeof`, `+`, `*`, etc.
 		Tag = { fg = c.magenta }, -- You can use CTRL-] on this.
 		Delimiter = { fg = c.fg_main }, -- Character that needs attention (e.g. `.`).
-		Special = { link = "SpeicalChar" },
-		SpecialChar = { fg = c.rx_backslash }, -- Speical character in a constant (e.g. escape character in C, format specifier in printf)
+		Special = { link = "Type" },
+		SpecialChar = { link = "Special" }, -- Speical character in a constant (e.g. escape character in C, format specifier in printf)
 		Underlined = { fg = c.fg_alt, underline = true }, -- (preferred) text that stands out (e.g. URIs).
 		Error = { fg = c.fg_main, bg = c.bg_red_intense }, -- (preferred) any erroneous construct.
 
