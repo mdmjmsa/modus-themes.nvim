@@ -120,8 +120,8 @@ function M.setup()
 		PreProc = { fg = c.red_cooler }, -- (preferred) generic preprocessor.
 		Include = { fg = c.red_cooler }, -- preprocessor `#include`.
 		Define = { fg = c.red_cooler }, -- preprocessor `#define`.
-		Macro = { fg = c.magenta_faint }, -- identifier defined by preprocessor `#define`
 		PreCondit = { fg = c.red_cooler }, -- preprocessor `#if`, `#else`, `#endif`, etc.
+		Macro = { link = "Define" }, -- Same as Define
 		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention (e.g. `TODO`, `FIXME`, and `XXX`).
 		Type = { fg = c.cyan_cooler }, -- (preferred) `int`, `long`, `char`, etc.
 		Number = { fg = c.blue_faint }, -- Number constant (e.g. `234`, `0xff`).
@@ -205,7 +205,12 @@ function M.setup()
 
 		["@constant"] = { link = "Constant" }, -- Constant identifier.
 		["@constant.builtin"] = { fg = c.blue_cooler }, -- Built-in constant values.
-		["@constant.macro"] = { link = "Macro" }, -- Constants defined by the preprocessor.
+		-- TODO: modus-themes takes macros as font-lock-variable-name-face.
+		-- In vim, a specific color is used to distinguish between
+		-- macro definitions and variable declarations. Currently the
+		-- color is fixed, but it is better to use a color variable to
+		-- make macros adapted to tinted, deuteranopia, tritanopia variants.
+		["@constant.macro"] = { fg = c.magenta_faint }, -- Constants defined by the preprocessor.
 
 		["@module"] = { link = "Include" }, -- Modules or namespaces.
 		["@module.builtin"] = { link = "Conditional" }, -- Built-in modules or namespaces.
