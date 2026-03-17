@@ -471,7 +471,6 @@ function M.setup(opts)
 	colors.fg_visual = colors.fg_region
 
 	colors.cursor = colors.fg_main
-	colors.comment = colors.fg_dim
 	colors.error = colors.red_cooler
 	colors.warning = colors.yellow_cooler
 	colors.info = colors.blue_cooler
@@ -482,6 +481,21 @@ function M.setup(opts)
 	colors.accent = colors.blue_warmer
 	colors.accent_darker = colors.blue
 	colors.accent_dark = colors.blue_intense
+
+	colors.builtin = colors.magenta_warmer
+	colors.comment = colors.fg_dim
+	colors.constant = colors.blue_cooler
+	colors.docstring = colors.green_faint
+	colors.fnname = colors.magenta
+	colors.keyword = colors.magenta_cooler
+	colors.identifier = colors.yellow_cooler
+	colors.preproc = colors.red_cooler
+	colors.property = colors.cyan
+	colors.rx_backslash = colors.yellow_faint
+	colors.rx_construct = colors.green_cooler
+	colors.string = colors.blue_warmer
+	colors.type = colors.cyan_cooler
+	colors.variable = colors.cyan
 
 	if variant == "tinted" then
 		colors.bg_main = colors.tinted_bg_main
@@ -518,13 +532,33 @@ function M.setup(opts)
 		colors.bg_diff_context = colors.tinted_bg_diff_context
 		colors.bg_paren_match = colors.tinted_bg_paren_match
 
+		colors.builtin = colors.magenta
 		colors.comment = colors.tinted_red_faint
+		colors.constant = colors.magenta_cooler
+		colors.docstring = colors.cyan_faint
+		colors.identifier = colors.yellow_faint
+		colors.rx_backslash = colors.magenta_warmer
+		colors.rx_construct = colors.magenta_cooler
 
 		if style == "modus_operandi" then
-			colors.cursor = colors.red
+			colors.cursor = colors.red_intense
+			colors.fnname = colors.yellow_cooler
+			colors.keyword = colors.blue
+			colors.preproc = colors.yellow_warmer
+			colors.property = colors.green_cooler
+			colors.string = colors.cyan
+			colors.type = colors.green_warmer
+			colors.variable = colors.green_cooler
 		end
 		if style == "modus_vivendi" then
-			colors.cursor = colors.magenta_warmer
+			colors.cursor = colors.magenta_intense
+			colors.fnname = colors.magenta_warmer
+			colors.keyword = colors.blue_warmer
+			colors.preproc = colors.red_cooler
+			colors.property = colors.cyan_warmer
+			colors.string = colors.blue
+			colors.type = colors.green_cooler
+			colors.variable = colors.cyan_warmer
 		end
 	end
 
@@ -553,17 +587,27 @@ function M.setup(opts)
 		colors.fg_removed = colors.deuteranopia_fg_removed
 		colors.fg_removed_intense = colors.deuteranopia_fg_removed_intense
 
-		colors.comment = colors.deuteranopia_yellow_cooler
 		colors.error = colors.deuteranopia_yellow_warmer
 		colors.warning = colors.deuteranopia_yellow
 		colors.info = colors.blue
 		colors.success = colors.deuteranopia_fg_added
 
+		colors.builtin = colors.deuteranopia_yellow
+		colors.comment = colors.deuteranopia_yellow_cooler
+		colors.constant = colors.blue_faint
+		colors.fnname = colors.deuteranopia_yellow_warmer
+		colors.keyword = colors.blue_cooler
+		colors.preproc = colors.magenta_cooler
+		colors.rx_backslash = colors.blue_cooler
+		colors.rx_construct = colors.deuteranopia_yellow_cooler
+
 		if style == "modus_operandi" then
 			colors.cursor = colors.blue_intense
+			colors.docstring = colors.green_faint
 		end
 		if style == "modus_vivendi" then
 			colors.cursor = colors.yellow_intense
+			colors.docstring = colors.cyan_faint
 		end
 	end
 
@@ -597,13 +641,32 @@ function M.setup(opts)
 		colors.fg_changed = colors.tritanopia_fg_changed
 		colors.fg_changed_intense = colors.tritanopia_fg_changed_intense
 
-		colors.comment = colors.tritanopia_red_faint
-		colors.error = colors.red_warmer
+		colors.cursor = colors.red_intense
+		colors.error = colors.tritanopia_red_warmer
 		colors.warning = colors.magenta
 		colors.info = colors.cyan
 		colors.success = colors.tritanopia_fg_added
 
-		colors.cursor = colors.red_intense
+		colors.builtin = colors.magenta
+		colors.comment = colors.tritanopia_red_faint
+		colors.docstring = colors.fg_alt
+		colors.fnname = colors.tritanopia_cyan_warmer
+		colors.keyword = colors.tritanopia_red_cooler
+		colors.identifier = colors.tritanopia_red_faint
+		colors.preproc = colors.tritanopia_red_warmer
+		colors.property = colors.cyan_cooler
+		colors.rx_backslash = colors.magenta
+		colors.rx_construct = colors.red
+		colors.string = colors.cyan
+		colors.type = colors.blue_warmer
+		colors.variable = colors.cyan_cooler
+
+		if style == "modus_operandi" then
+			colors.constant = colors.green_cooler
+		end
+		if style == "modus_vivendi" then
+			colors.constant = colors.green_faint
+		end
 	end
 	config.options.on_colors(colors)
 

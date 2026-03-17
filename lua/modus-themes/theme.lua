@@ -103,29 +103,29 @@ function M.setup()
 
 		-- Syntax
 		Comment = { fg = c.comment, style = options.styles.comments }, -- Any comment.
-		String = { fg = c.blue_warmer }, -- String constant (e.g. `"this is a string"`).
+		String = { fg = c.string }, -- String constant (e.g. `"this is a string"`).
 		Character = { fg = c.blue_warmer }, -- Character constant (e.g. `c`, `\n`).
 		Boolean = { fg = c.blue, bold = true }, -- Boolean constant (e.g. `TRUE`, `false`).
-		Statement = { fg = c.magenta_cooler }, -- (preferred) any statement.
-		Conditional = { fg = c.magenta_cooler }, -- `if`, `then`, `else`, `endif`, `switch`, etc.
-		Repeat = { fg = c.magenta_cooler }, -- `for`, `do`, `while`, etc.
+		Statement = { fg = c.keyword }, -- (preferred) any statement.
+		Conditional = { fg = c.keyword }, -- `if`, `then`, `else`, `endif`, `switch`, etc.
+		Repeat = { fg = c.keyword }, -- `for`, `do`, `while`, etc.
 		Label = { fg = c.cyan }, -- `case`, `default`, etc.
-		Keyword = { fg = c.magenta_cooler, style = options.styles.keywords }, -- Any other keyword.
-		Exception = { fg = c.magenta_cooler }, -- `try`, `catch`, `throw`, etc.
-		StorageClass = { fg = c.magenta_cooler }, -- `static`, `register`, `volatile`, etc.
-		Structure = { fg = c.magenta_cooler }, -- `struct`, `union`, `enum`, etc.
+		Keyword = { fg = c.keyword, style = options.styles.keywords }, -- Any other keyword.
+		Exception = { fg = c.keyword }, -- `try`, `catch`, `throw`, etc.
+		StorageClass = { fg = c.keyword }, -- `static`, `register`, `volatile`, etc.
+		Structure = { fg = c.keyword }, -- `struct`, `union`, `enum`, etc.
 		Constant = { fg = c.fg_main }, -- (preferred) any constant.
-		Function = { fg = c.magenta, style = options.styles.functions }, -- Function names.
-		Identifier = { fg = c.cyan, style = options.styles.variables }, -- (preferred) any variable name.
-		PreProc = { fg = c.red_cooler }, -- (preferred) generic preprocessor.
-		Include = { fg = c.red_cooler }, -- preprocessor `#include`.
-		Define = { fg = c.red_cooler }, -- preprocessor `#define`.
-		PreCondit = { fg = c.red_cooler }, -- preprocessor `#if`, `#else`, `#endif`, etc.
+		Function = { fg = c.fnname, style = options.styles.functions }, -- Function names.
+		Identifier = { fg = c.identifier, style = options.styles.variables }, -- General identifiers.
+		PreProc = { fg = c.preproc }, -- (preferred) generic preprocessor.
+		Include = { fg = c.preproc }, -- preprocessor `#include`.
+		Define = { fg = c.preproc }, -- preprocessor `#define`.
 		Macro = { link = "Define" }, -- Same as Define
+		PreCondit = { fg = c.preproc }, -- preprocessor `#if`, `#else`, `#endif`, etc.
 		Todo = { fg = c.magenta, bold = true }, -- (preferred) anything that needs extra attention (e.g. `TODO`, `FIXME`, and `XXX`).
-		Type = { fg = c.cyan_cooler }, -- (preferred) `int`, `long`, `char`, etc.
-		Number = { fg = c.blue_faint }, -- Number constant (e.g. `234`, `0xff`).
+		Type = { fg = c.type }, -- (preferred) `int`, `long`, `char`, etc.
 		Typedef = { fg = c.keyword }, -- A typedef.
+		Number = { fg = c.fg_main }, -- Number constant (e.g. `234`, `0xff`).
 		Float = { link = "Number" }, -- Floating point constant (e.g. `2.3e10`).
 		Operator = { fg = c.fg_main }, -- `sizeof`, `+`, `*`, etc.
 		Tag = { fg = c.magenta }, -- You can use CTRL-] on this.
@@ -204,7 +204,7 @@ function M.setup()
 		["@variable.member"] = { link = "@variable" }, -- Object and struct fields.
 
 		["@constant"] = { link = "Constant" }, -- Constant identifier.
-		["@constant.builtin"] = { fg = c.blue_cooler }, -- Built-in constant values.
+		["@constant.builtin"] = { fg = c.constant }, -- Built-in constant values.
 		-- TODO: modus-themes takes macros as font-lock-variable-name-face.
 		-- In vim, a specific color is used to distinguish between
 		-- macro definitions and variable declarations. Currently the
@@ -218,9 +218,9 @@ function M.setup()
 
 		-- Literals
 		["@string"] = { link = "String" }, -- String literals.
-		["@string.documentation"] = { fg = c.green_faint, style = options.styles.comments }, -- String documening code (e.g. Python docstrings).
-		["@string.regex"] = { fg = c.green_cooler }, -- Regular expressions.
-		["@string.escape"] = { fg = c.yellow_faint }, -- Escape characters within a string.
+		["@string.documentation"] = { fg = c.docstring, style = options.styles.comments }, -- String documening code (e.g. Python docstrings).
+		["@string.regex"] = { fg = c.rx_construct }, -- Regular expressions.
+		["@string.escape"] = { fg = c.rx_backslash }, -- Escape characters within a string.
 		["@string.special"] = { fg = c.red_faint }, -- Other special strings (e.g. dates).
 		["@string.special.symbol"] = { link = "Identifier" }, -- Symbols or atoms.
 		["@string.special.path"] = { fg = c.blue }, -- Filenames.
@@ -240,14 +240,14 @@ function M.setup()
 
 		["@attribute"] = { link = "PreProc" }, -- Attribute annotations (e.g. Python decorators).
 		["@attribute.builtin"] = { link = "PreProc" }, -- Built-in annotations (e.g. `property` in Python).
-		["@property"] = { link = "Label" }, -- The key in key-value pairs
+		["@property"] = { fg = c.property }, -- The key in key-value pairs
 		["@property.c"] = { link = "@variable.member" }, -- Struct fields in C
 		["@property.cpp"] = { link = "@variable.member" }, -- Class/struct members in C++
 		["@property.cs"] = { link = "@variable.member" }, -- getter/setter in C#
 
 		-- Functions
 		["@function"] = { link = "Function" }, -- Function definitions.
-		["@function.builtin"] = { fg = c.magenta_warmer }, -- Built-in functions.
+		["@function.builtin"] = { fg = c.builtin }, -- Built-in functions.
 		["@function.call"] = { link = "@function" }, -- Function calls.
 		["@function.macro"] = { link = "Macro" }, -- Preprocessor calls.
 
@@ -385,12 +385,12 @@ function M.setup()
 		-- C/C++ LSP Semantic Token Groups
 		["@lsp.type.property.c"] = { link = "@property.c" }, -- Struct field access in C
 		["@lsp.type.property.cpp"] = { link = "@property.cpp" }, -- Class/Struct member access in C++
-		["@lsp.typemod.property.declaration.c"] = { link = "Identifier" }, -- Struct field declaration in C
-		["@lsp.typemod.property.declaration.cpp"] = { link = "Identifier" }, -- Class/Struct member declaration in C++
-		["@lsp.typemod.variable.declaration.c"] = { link = "Identifier" }, -- Variable declaration in C
-		["@lsp.typemod.variable.declaration.cpp"] = { link = "Identifier" }, -- Variable declaration in C++
-		["@lsp.typemod.variable.definition.c"] = { link = "Identifier" }, -- Variable definition in C
-		["@lsp.typemod.variable.definition.cpp"] = { link = "Identifier" }, -- Variable definition in C++
+		["@lsp.typemod.property.declaration.c"] = { fg = c.variable }, -- Struct field declaration in C
+		["@lsp.typemod.property.declaration.cpp"] = { fg = c.variable }, -- Class/Struct member declaration in C++
+		["@lsp.typemod.variable.declaration.c"] = { fg = c.variable }, -- Variable declaration in C
+		["@lsp.typemod.variable.declaration.cpp"] = { fg = c.variable }, -- Variable declaration in C++
+		["@lsp.typemod.variable.definition.c"] = { fg = c.variable }, -- Variable definition in C
+		["@lsp.typemod.variable.definition.cpp"] = { fg = c.variable }, -- Variable definition in C++
 
 		-- Plugins
 		-- Plugins originally taken and modified from
