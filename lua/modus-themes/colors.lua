@@ -485,7 +485,6 @@ function M.setup(opts)
 	colors.builtin = colors.magenta_warmer
 	colors.comment = colors.fg_dim
 	colors.constant = colors.blue_cooler
-	colors.docstring = colors.green_faint
 	colors.fnname = colors.magenta
 	colors.keyword = colors.magenta_cooler
 	colors.identifier = colors.yellow_cooler
@@ -496,6 +495,13 @@ function M.setup(opts)
 	colors.string = colors.blue_warmer
 	colors.type = colors.cyan_cooler
 	colors.variable = colors.cyan
+
+	if style == "modules_operandi" then
+		colors.dostring = colors.green_faint
+	end
+	if style == "modus_vivendi" then
+		colors.docstring = colors.cyan_faint
+	end
 
 	if variant == "tinted" then
 		colors.bg_main = colors.tinted_bg_main
