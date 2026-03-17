@@ -212,8 +212,8 @@ function M.setup()
 		-- make macros adapted to tinted, deuteranopia, tritanopia variants.
 		["@constant.macro"] = { fg = c.magenta_faint }, -- Constants defined by the preprocessor.
 
-		["@module"] = { link = "Include" }, -- Modules or namespaces.
-		["@module.builtin"] = { link = "Conditional" }, -- Built-in modules or namespaces.
+		["@module"] = { link = "Type" }, -- Modules or namespaces.
+		["@module.builtin"] = { link = "@module" }, -- Built-in modules or namespaces.
 		["@label"] = { link = "Label" }, -- GOTO and other labels (e.g. `label:` in C and `:label:` in Lua).
 
 		-- Literals
