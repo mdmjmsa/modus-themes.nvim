@@ -105,7 +105,7 @@ function M.setup()
 		Comment = { fg = c.comment, style = options.styles.comments }, -- Any comment.
 		String = { fg = c.string }, -- String constant (e.g. `"this is a string"`).
 		Character = { fg = c.string }, -- Character constant (e.g. `c`, `\n`).
-		Boolean = { fg = c.blue, bold = true }, -- Boolean constant (e.g. `TRUE`, `false`).
+		Boolean = { fg = c.constant, bold = true }, -- Boolean constant (e.g. `TRUE`, `false`).
 		Statement = { fg = c.keyword }, -- (preferred) any statement.
 		Conditional = { link = "Statement" }, -- `if`, `then`, `else`, `endif`, `switch`, etc.
 		Repeat = { link = "Statement" }, -- `for`, `do`, `while`, etc.
