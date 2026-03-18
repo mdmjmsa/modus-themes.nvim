@@ -227,6 +227,7 @@ function M.setup()
 		["@string.special.url"] = { fg = c.cyan_cooler }, -- URIs (e.g. hyperlinks).
 
 		["@character"] = { link = "Character" }, -- Character literals.
+		["@character.printf"] = { link = "Constant" }, -- Specifier in printf
 		["@character.special"] = { link = "SpecialChar" }, -- Special characters (e.g. wildcards).
 
 		["@boolean"] = { link = "Boolean" }, -- Boolean literals.
