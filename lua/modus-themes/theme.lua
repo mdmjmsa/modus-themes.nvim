@@ -336,6 +336,7 @@ function M.setup()
 		["@tag.delimiter.tsx"] = { fg = c.blue_cooler },
 
 		-- Python
+		["@lsp.type.selfParameter.python"] = { link = "@variable.parameter" },
 		["@lsp.type.namespace.python"] = { link = "@variable" },
 
 		-- LSP Semantic Token Groups
