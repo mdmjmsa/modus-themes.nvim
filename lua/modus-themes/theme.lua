@@ -109,7 +109,7 @@ function M.setup()
 		Statement = { fg = c.keyword }, -- (preferred) any statement.
 		Conditional = { link = "Statement" }, -- `if`, `then`, `else`, `endif`, `switch`, etc.
 		Repeat = { link = "Statement" }, -- `for`, `do`, `while`, etc.
-		Label = { fg = c.cyan }, -- `case`, `default`, etc.
+		Label = { link = "Statement" }, -- `case`, `default`, etc.
 		Keyword = { fg = c.keyword, style = options.styles.keywords }, -- Any other keyword.
 		Exception = { fg = c.keyword }, -- `try`, `catch`, `throw`, etc.
 		StorageClass = { fg = c.keyword }, -- `static`, `register`, `volatile`, etc.
@@ -214,7 +214,7 @@ function M.setup()
 
 		["@module"] = { link = "Type" }, -- Modules or namespaces.
 		["@module.builtin"] = { link = "@module" }, -- Built-in modules or namespaces.
-		["@label"] = { link = "Label" }, -- GOTO and other labels (e.g. `label:` in C and `:label:` in Lua).
+		["@label"] = { link = "Identifier" }, -- GOTO and other labels (e.g. `label:` in C and `:label:` in Lua).
 
 		-- Literals
 		["@string"] = { link = "String" }, -- String literals.
